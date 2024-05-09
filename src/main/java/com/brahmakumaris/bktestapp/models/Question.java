@@ -15,11 +15,23 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long quesId;
 
+    @Column(name = "ques_title")
+    private String quesTitle;
+
     @Column(name = "ques_content", columnDefinition = "TEXT")
     private String quesContent;
 
     @Column(name = "ques_img")
     private String quesImg;
+
+    @ManyToMany
+    @JoinTable(
+            name = "question_tags",
+            joinColumns = @JoinColumn(name = "question_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id")
+    )
+    private List<Tag> tags;
+
 
     @Enumerated(EnumType.STRING)
     @Column(name = "ques_type")
