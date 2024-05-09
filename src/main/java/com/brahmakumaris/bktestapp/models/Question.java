@@ -48,5 +48,9 @@ public class Question {
 
     @OneToMany(mappedBy = "question")
     private List<Option> options;
+
+    @ManyToOne
+    @JoinColumn(name = "section_id")
+    private Section section;
 }
 
