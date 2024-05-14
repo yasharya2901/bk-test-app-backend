@@ -1,4 +1,4 @@
-package com.brahmakumaris.bktestapp.models;
+package com.brahmakumaris.bktestapp.models.Section;
 
 import jakarta.persistence.*;
 import lombok.Getter;

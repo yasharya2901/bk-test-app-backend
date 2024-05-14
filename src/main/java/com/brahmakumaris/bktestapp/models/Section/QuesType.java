@@ -1,4 +1,4 @@
-package com.brahmakumaris.bktestapp.models;
+package com.brahmakumaris.bktestapp.models.Section;
 
 public enum QuesType {
     MULTIPLE_CHOICE,

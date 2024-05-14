@@ -1,5 +1,7 @@
 package com.brahmakumaris.bktestapp.models;
 
+import com.brahmakumaris.bktestapp.models.Test.Test;
+import com.brahmakumaris.bktestapp.models.Test.TestState;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,6 +15,7 @@ import java.util.Map;
 @Setter
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
     @Column(name = "user_name")
@@ -33,11 +36,11 @@ public class User {
     @Column(name = "state")
     private Map<Test, TestState> testStates;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)  // Added cascade = CascadeType.ALL and orphanRemoval = true
     private List<Result> results;
 
     @ManyToOne
-    @JoinColumn(name = "batch_id")
+    @JoinColumn(name = "batch_id", nullable = false)  // Added nullable = false
     private Batch batch;
 
     @Enumerated(EnumType.STRING)

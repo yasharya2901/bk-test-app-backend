@@ -1,5 +1,7 @@
-package com.brahmakumaris.bktestapp.models;
+package com.brahmakumaris.bktestapp.models.Test;
 
+import com.brahmakumaris.bktestapp.models.Batch;
+import com.brahmakumaris.bktestapp.models.Section.Section;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

@@ -1,5 +1,6 @@
-package com.brahmakumaris.bktestapp.models;
+package com.brahmakumaris.bktestapp.models.Section;
 
+import com.brahmakumaris.bktestapp.models.Test.Test;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,7 +33,6 @@ public class Question {
     )
     private List<Tag> tags;
 
-
     @Enumerated(EnumType.STRING)
     @Column(name = "ques_type")
     private QuesType quesType;
@@ -43,14 +43,10 @@ public class Question {
     @Column(name = "ques_max_mark")
     private int quesMaxMark;
 
-    @ManyToMany(mappedBy = "questions")
-    private List<Test> tests;
-
-    @OneToMany(mappedBy = "question")
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)  // Added cascade = CascadeType.ALL and orphanRemoval = true
     private List<Option> options;
 
     @ManyToOne
-    @JoinColumn(name = "section_id")
+    @JoinColumn(name = "section_id", nullable = false)  // Added nullable = false
     private Section section;
 }
-
