@@ -1,6 +1,9 @@
 package com.brahmakumaris.bktestapp.models;
 
 public enum UserType {
-    ADMIN,
-    CLIENT
+    ROLE_ADMIN,
+    ROLE_CLIENT
 }
+
+// Added "ROLE_" prefix to follow the convention of Spring Security.
+// Otherwise, it will not work properly.
