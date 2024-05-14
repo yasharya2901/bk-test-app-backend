@@ -1,4 +1,4 @@
-package com.brahmakumaris.bktestapp.models;
+package com.brahmakumaris.bktestapp.models.Section;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -17,6 +17,6 @@ public class Option {
     private String optionText;
 
     @ManyToOne
-    @JoinColumn(name = "question_id")
+    @JoinColumn(name = "question_id", nullable = false)
     private Question question;
 }

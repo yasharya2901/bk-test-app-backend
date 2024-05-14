@@ -1,5 +1,6 @@
-package com.brahmakumaris.bktestapp.models;
+package com.brahmakumaris.bktestapp.models.Section;
 
+import com.brahmakumaris.bktestapp.models.Test.Test;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,10 +19,10 @@ public class Section {
     @Column(name = "section_name")
     private String sectionName;
 
-    @OneToMany(mappedBy = "section")
+    @OneToMany(mappedBy = "section", cascade = CascadeType.ALL, orphanRemoval = true)  // Added cascade = CascadeType.ALL and orphanRemoval = true
     private List<Question> questions;
 
     @ManyToOne
-    @JoinColumn(name = "test_id")
+    @JoinColumn(name = "test_id", nullable = false)  // Added nullable = false
     private Test test;
 }

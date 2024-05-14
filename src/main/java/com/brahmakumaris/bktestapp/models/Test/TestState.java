@@ -1,4 +1,4 @@
-package com.brahmakumaris.bktestapp.models;
+package com.brahmakumaris.bktestapp.models.Test;
 
 public enum TestState {
     ATTEMPTED,
