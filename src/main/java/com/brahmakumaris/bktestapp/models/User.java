@@ -5,7 +5,6 @@ import com.brahmakumaris.bktestapp.models.Test.TestState;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.util.List;
 import java.util.Map;
 
@@ -34,17 +33,17 @@ public class User {
     @CollectionTable(name = "test_states", joinColumns = @JoinColumn(name = "user_id"))
     @MapKeyJoinColumn(name = "test_id")
     @Column(name = "state")
+    @Enumerated(EnumType.STRING)  // Specify that TestState should be persisted as a String
     private Map<Test, TestState> testStates;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)  // Added cascade = CascadeType.ALL and orphanRemoval = true
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Result> results;
 
     @ManyToOne
-    @JoinColumn(name = "batch_id", nullable = false)  // Added nullable = false
+    @JoinColumn(name = "batch_id", nullable = false)
     private Batch batch;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "user_type")
     private UserType userType;
 }
-
