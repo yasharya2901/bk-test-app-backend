@@ -17,6 +17,6 @@ public class Option {
     private String optionText;
 
     @ManyToOne
-    @JoinColumn(name = "question_id", nullable = false)
+    @JoinColumn(name = "question_id", nullable = true)
     private Question question;
 }
