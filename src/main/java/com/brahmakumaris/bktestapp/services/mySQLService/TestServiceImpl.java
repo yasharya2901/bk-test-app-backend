@@ -3,10 +3,12 @@ package com.brahmakumaris.bktestapp.services.mySQLService;
 import com.brahmakumaris.bktestapp.models.Test.Test;
 import com.brahmakumaris.bktestapp.repositories.TestRepository;
 import com.brahmakumaris.bktestapp.services.serviceInterface.TestService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class TestServiceImpl implements TestService {
 
     private final TestRepository testRepository;

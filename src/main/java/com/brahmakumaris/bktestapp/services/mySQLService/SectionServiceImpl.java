@@ -3,10 +3,12 @@ package com.brahmakumaris.bktestapp.services.mySQLService;
 import com.brahmakumaris.bktestapp.models.Section.Section;
 import com.brahmakumaris.bktestapp.repositories.SectionRepository;
 import com.brahmakumaris.bktestapp.services.serviceInterface.SectionService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class SectionServiceImpl implements SectionService {
 
     private final SectionRepository sectionRepository;

@@ -7,10 +7,12 @@ import com.brahmakumaris.bktestapp.repositories.ResultRepository;
 import com.brahmakumaris.bktestapp.repositories.TestRepository;
 import com.brahmakumaris.bktestapp.services.serviceInterface.QuestionService;
 import com.brahmakumaris.bktestapp.services.serviceInterface.ResultService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ResultServiceImpl implements ResultService {
 
     private final ResultRepository resultRepository;
