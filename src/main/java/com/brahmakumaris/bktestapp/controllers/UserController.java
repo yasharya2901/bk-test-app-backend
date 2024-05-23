@@ -1,32 +1,36 @@
 package com.brahmakumaris.bktestapp.controllers;
 
+import com.brahmakumaris.bktestapp.dtos.User.UserCreationDTO;
+import com.brahmakumaris.bktestapp.dtos.User.UserDTO;
 import com.brahmakumaris.bktestapp.models.User;
 import com.brahmakumaris.bktestapp.services.serviceInterface.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/test-app/v1/user")
 public class UserController {
 
-    @Autowired
     private UserService userService;
 
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+
     @GetMapping
-    public List<User> getAllUsers() {
+    public List<UserDTO> getAllUsers() {
         return userService.getAllUsers();
     }
 
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable Long id) {
+    public UserDTO getUserById(@PathVariable Long id) {
         return userService.getUserById(id);
     }
 
     @PostMapping
-    public User createUser(@RequestBody User user) {
+    public UserDTO createUser(@RequestBody UserCreationDTO user) {
         return userService.createUser(user);
     }
 
