@@ -11,7 +11,8 @@ public interface QuestionService {
     Question createQuestion(Question question);
     void deleteQuestion(Long id);
     List<Question> findBySectionId(Long sectionId);
-    List<Question> findByQuesType(String quesType);
-    List<Question> findByTagId(Long tagId);  // Added method to find questions by tag ID
-    List<Question> findByTagName(String tagName);  // Added method to find questions by tag name
+//    List<Question> findByQuesType(String quesType);
+//    List<Question> findByTagId(Long tagId);  // Added method to find questions by tag ID
+//    List<Question> findByTagName(String tagName);  // Added method to find questions by tag name
+//    List<Question> findByTestId(Long testId);
 }

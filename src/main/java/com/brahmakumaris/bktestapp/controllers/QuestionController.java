@@ -30,23 +30,23 @@ public class QuestionController {
         return questionService.findBySectionId(sectionId);
     }
 
-    @GetMapping("/quesType/{quesType}")
-    public List<Question> findByQuesType(@PathVariable String quesType) {
-        return questionService.findByQuesType(quesType);
-    }
+//    @GetMapping("/quesType/{quesType}")
+//    public List<Question> findByQuesType(@PathVariable String quesType) {
+//        return questionService.findByQuesType(quesType);
+//    }
 
     @PostMapping
     public Question createQuestion(@RequestBody Question question) {
         return questionService.createQuestion(question);
     }
 
-    @GetMapping("/tag/id/{tagId}")
-    public List<Question> findByTagId(@PathVariable Long tagId) {
-        return questionService.findByTagId(tagId);
-    }
+//    @GetMapping("/tag/id/{tagId}")
+//    public List<Question> findByTagId(@PathVariable Long tagId) {
+//        return questionService.findByTagId(tagId);
+//    }
 
-    @GetMapping("/tag/name/{tagName}")
-    public List<Question> findByTagName(@PathVariable String tagName) {
-        return questionService.findByTagName(tagName);
-    }
+//    @GetMapping("/tag/name/{tagName}")
+//    public List<Question> findByTagName(@PathVariable String tagName) {
+//        return questionService.findByTagName(tagName);
+//    }
 }

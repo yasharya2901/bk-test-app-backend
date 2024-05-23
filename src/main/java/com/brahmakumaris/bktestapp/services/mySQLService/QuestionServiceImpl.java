@@ -33,32 +33,39 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public Question createQuestion(Question question) {
+        // TODO: Implement admin check
         return questionRepository.save(question);
     }
 
     @Override
     public void deleteQuestion(Long id) {
+        // TODO: Implement admin check
         questionRepository.deleteById(id);
     }
 
     @Override
     public List<Question> findBySectionId(Long sectionId) {
-        return questionRepository.findBySectionId(sectionId);
+        return questionRepository.findBySection_SectionId(sectionId);
     }
 
-    @Override
-    public List<Question> findByQuesType(String quesType) {
-        return questionRepository.findByQuesType(quesType);
-    }
+//    @Override
+//    public List<Question> findByQuesType(String quesType) {
+//        return questionRepository.findByQuesType(quesType);
+//    }
+//
+//    @Override
+//    public List<Question> findByTagId(Long tagId) {
+//        return questionRepository.findByTags_TagId(tagId);
+//    }
+//
+//    @Override
+//    public List<Question> findByTagName(String tagName) {
+//        return questionRepository.findByTags_TagName(tagName);
+//    }
 
-    @Override
-    public List<Question> findByTagId(Long tagId) {
-        return questionRepository.findByTags_TagId(tagId);
-    }
-
-    @Override
-    public List<Question> findByTagName(String tagName) {
-        return questionRepository.findByTags_TagName(tagName);
-    }
+//    @Override
+//    public List<Question> findByTestId(Long testId) {
+//        return questionRepository.findByTests_TestId(testId);
+//    }
 
 }
