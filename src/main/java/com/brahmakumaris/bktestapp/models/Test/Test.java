@@ -35,6 +35,12 @@ public class Test {
     @OneToMany(mappedBy = "test")
     private List<Section> sections;
 
+    @Column(name = "passing_marks")
+    private int passingMarks;
+
+    @Column(name = "total_marks")
+    private int totalMarks;
+
     @ManyToMany(mappedBy = "tests")
     private List<Batch> batches;
 }

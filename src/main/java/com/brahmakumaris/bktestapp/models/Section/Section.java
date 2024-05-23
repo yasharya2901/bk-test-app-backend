@@ -9,8 +9,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "sections")
-@Setter
 @Getter
+@Setter
 public class Section {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,10 +19,10 @@ public class Section {
     @Column(name = "section_name")
     private String sectionName;
 
-    @OneToMany(mappedBy = "section", cascade = CascadeType.ALL, orphanRemoval = true)  // Added cascade = CascadeType.ALL and orphanRemoval = true
+    @OneToMany(mappedBy = "section", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Question> questions;
 
     @ManyToOne
-    @JoinColumn(name = "test_id", nullable = false)  // Added nullable = false
+    @JoinColumn(name = "test_id", nullable = false)
     private Test test;
 }

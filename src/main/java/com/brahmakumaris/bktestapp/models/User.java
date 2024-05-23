@@ -29,6 +29,9 @@ public class User {
     @Column(name = "address")
     private String address;
 
+    @Column(name = "is_active")
+    private Boolean isActive;
+
     @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(name = "test_states", joinColumns = @JoinColumn(name = "user_id"))
     @MapKeyJoinColumn(name = "test_id")

@@ -1,6 +1,5 @@
 package com.brahmakumaris.bktestapp.models.Section;
 
-import com.brahmakumaris.bktestapp.models.Test.Test;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -43,10 +42,13 @@ public class Question {
     @Column(name = "ques_max_mark")
     private int quesMaxMark;
 
-    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)  // Added cascade = CascadeType.ALL and orphanRemoval = true
+    @Column(name = "is_skippable")
+    private boolean isSkippable;
+
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Option> options;
 
     @ManyToOne
-    @JoinColumn(name = "section_id", nullable = false)  // Added nullable = false
+    @JoinColumn(name = "section_id", nullable = false)
     private Section section;
 }
