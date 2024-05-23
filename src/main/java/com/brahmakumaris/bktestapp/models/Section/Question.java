@@ -43,6 +43,10 @@ public class Question {
     @Column(name = "ques_max_mark")
     private int quesMaxMark;
 
+    // Column for if the section is skippable
+    @Column(name = "is_skippable")
+    private boolean isSkippable;
+
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)  // Added cascade = CascadeType.ALL and orphanRemoval = true
     private List<Option> options;
 
