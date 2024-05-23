@@ -3,10 +3,12 @@ package com.brahmakumaris.bktestapp.services.mySQLService;
 import com.brahmakumaris.bktestapp.models.Section.Tag;
 import com.brahmakumaris.bktestapp.repositories.TagRepository;
 import com.brahmakumaris.bktestapp.services.serviceInterface.TagService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class TagServiceImpl implements TagService {
 
     private final TagRepository tagRepository;

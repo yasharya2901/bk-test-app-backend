@@ -6,7 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/test-app/v1/options")
+@RequestMapping("/api/test-app/v1/option")
 public class OptionController {
 
     private final OptionService optionService;

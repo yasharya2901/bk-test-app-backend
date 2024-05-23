@@ -5,6 +5,8 @@ import com.brahmakumaris.bktestapp.repositories.BatchRepository;
 import com.brahmakumaris.bktestapp.services.serviceInterface.BatchService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BatchServiceImpl implements BatchService {
 
@@ -36,4 +38,10 @@ public class BatchServiceImpl implements BatchService {
     public Batch findByBatchName(String batchName) {
         return batchRepository.findByBatchName(batchName);
     }
+
+    @Override
+    public List<Batch> findAllBatches() {
+        return batchRepository.findAll();
+    }
+
 }
