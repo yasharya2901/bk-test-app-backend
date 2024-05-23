@@ -2,14 +2,12 @@ package com.brahmakumaris.bktestapp.controllers;
 
 import com.brahmakumaris.bktestapp.models.Batch;
 import com.brahmakumaris.bktestapp.services.serviceInterface.BatchService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/test-app/v1/batches")
+@RequestMapping("/api/test-app/v1/batch")
 public class BatchController {
     private BatchService batchService;
 

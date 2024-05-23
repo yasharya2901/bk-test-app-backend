@@ -9,10 +9,10 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/test-app/v1/tests")
+@RequestMapping("/api/test-app/v1/test")
 public class TestController {
 
-    
+
     private final TestService testService;
 
     public TestController(TestService testService) {

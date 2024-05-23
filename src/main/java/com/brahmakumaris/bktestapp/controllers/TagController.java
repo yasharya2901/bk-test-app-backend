@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/test-app/v1/tags")
+@RequestMapping("/api/test-app/v1/tag")
 public class TagController {
 
     private TagService tagService;
