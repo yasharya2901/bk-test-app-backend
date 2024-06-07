@@ -1,5 +1,7 @@
 package com.brahmakumaris.bktestapp.controllers;
 
+import com.brahmakumaris.bktestapp.dtos.BatchDTO.BatchCreationDTO;
+import com.brahmakumaris.bktestapp.dtos.BatchDTO.BatchDTO;
 import com.brahmakumaris.bktestapp.models.Batch;
 import com.brahmakumaris.bktestapp.services.serviceInterface.BatchService;
 import org.springframework.web.bind.annotation.*;
@@ -16,17 +18,17 @@ public class BatchController {
     }
 
     @GetMapping
-    public List<Batch> getAllBatches() {
+    public List<BatchDTO> getAllBatches() {
         return batchService.findAllBatches();
     }
 
     @GetMapping("/{id}")
-    public Batch getBatchById(@PathVariable Long id) {
+    public BatchDTO getBatchById(@PathVariable Long id) {
         return batchService.getBatchById(id);
     }
 
     @PostMapping
-    public Batch createBatch(@RequestBody Batch batch) {
+    public BatchDTO createBatch(@RequestBody BatchCreationDTO batch) {
         return batchService.createBatch(batch);
     }
 

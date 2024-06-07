@@ -1,5 +1,6 @@
 package com.brahmakumaris.bktestapp.controllers;
 
+import com.brahmakumaris.bktestapp.dtos.TestDTO.TestDTO;
 import com.brahmakumaris.bktestapp.models.Test.Test;
 import com.brahmakumaris.bktestapp.services.serviceInterface.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/test-app/v1/test")
+@CrossOrigin(origins = "*")
 public class TestController {
 
 
@@ -29,10 +31,17 @@ public class TestController {
         return testService.getTestById(id);
     }
 
+//    @PostMapping
+//    public Test createTest(@RequestBody Test test) {
+//        return testService.createTest(test);
+//    }
+
     @PostMapping
-    public Test createTest(@RequestBody Test test) {
-        return testService.createTest(test);
+    public String createTest(@RequestBody TestDTO testDTO) {
+        return "Success";
     }
+
+
 
 
     @DeleteMapping("/{id}")

@@ -2,11 +2,11 @@ package com.brahmakumaris.bktestapp.services.mySQLService;
 
 import com.brahmakumaris.bktestapp.dtos.User.UserCreationDTO;
 import com.brahmakumaris.bktestapp.dtos.User.UserDTO;
+import com.brahmakumaris.bktestapp.models.Batch;
 import com.brahmakumaris.bktestapp.models.Result;
 import com.brahmakumaris.bktestapp.models.Test.Test;
 import com.brahmakumaris.bktestapp.models.Test.TestState;
 import com.brahmakumaris.bktestapp.models.User;
-import com.brahmakumaris.bktestapp.repositories.TestRepository;
 import com.brahmakumaris.bktestapp.repositories.UserRepository;
 import com.brahmakumaris.bktestapp.services.serviceInterface.BatchService;
 import com.brahmakumaris.bktestapp.services.serviceInterface.ResultService;
@@ -100,7 +100,9 @@ public class UserServiceImpl implements UserService {
         }
         // setting batch
         if (userDTO.getBatchId() != null) {
-            user.setBatch(batchService.getBatchById(userDTO.getBatchId()));
+            Long batchId = userDTO.getBatchId();
+            Batch batch = batchService.getBatch(batchId);
+            user.setBatch(batch);
         }
         user.setUserType(userDTO.getUserType());
         return user;
